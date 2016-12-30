@@ -16,7 +16,8 @@ body {
     font-family: Arimo Regular, Arial, sans-serif;
     font-size: 13px;
     background: #fff;
-    background-image: url(../ui/wallpaper.jpg);
+    /*background-image: url(../ui/wallpaper.jpg);*/
+    background-image: url(../ui/minimal_bird.jpg);
     background-position: 50%;
     background-size: cover;
     background-attachment: fixed;
@@ -186,7 +187,7 @@ body {
 }
 .actions-bar {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     height: 44px;
@@ -202,12 +203,12 @@ body {
 }
 .action {
     cursor: pointer;
-    float: left;
+    float: right;
     margin-right: 20px;
 }
 .action-clock {
     cursor: default;
-    float: right;
+    float: left;
     margin-right: 0;
 }
 .action i {
