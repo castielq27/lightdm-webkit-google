@@ -95,6 +95,7 @@ if (!('lightdm' in window)) {
     };
 
     lightdm.provide_secret = function (secret) {
+
         if (typeof lightdm._username == 'undefined' || !lightdm._username) {
             throw "must call start_authentication first"
         }
@@ -197,4 +198,8 @@ var _lightdm_mock_get_user = function (username) {
         }
     }
     return user;
+}
+
+var logger = function(data){
+  $("#logger").append(data+'<br>');
 }

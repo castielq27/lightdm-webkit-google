@@ -228,3 +228,8 @@ body {
 .action-reboot i {
     background-image: url(../ui/action-reboot.png);
 }
+
+#message {
+  text-align: center;
+  color: red;
+}

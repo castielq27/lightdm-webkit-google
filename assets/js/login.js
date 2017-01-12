@@ -66,11 +66,11 @@ var login = (function (lightdm, $) {
     };
     // These can be used for user feedback
     window.show_error = function (e) {
-        console.log('Error: ' + e);
+        logger('Error: ' + e);
 
     };
     window.show_prompt = function (e) {
-        console.log('Prompt: ' + e);
+        logger('Prompt: ' + e);
     };
 
     // exposed outside of the closure
@@ -86,8 +86,17 @@ var login = (function (lightdm, $) {
             });
 
             $('form').on('submit', function (e) {
-                e.preventDefault();
-                window.provide_secret();
+                try {
+                  e.preventDefault();
+
+                  var idx = e.currentTarget.selectedIndex;
+                  select_user_from_list(idx);
+
+                  window.provide_secret();
+                } catch (e){
+                   $('#message').text("Error: " +e);
+                }
+
             });
         });
     };
